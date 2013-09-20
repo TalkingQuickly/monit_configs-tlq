@@ -1,4 +1,4 @@
-template "/etc/monit/conf.d/nginx.conf" do
+template "/etc/monit/conf.d/postgres.conf" do
   owner "root"
   group "root"
   mode "0700"
