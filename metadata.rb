@@ -2,7 +2,7 @@ name              "monit_configs-tlq"
 maintainer        "Ben Dixon"
 maintainer_email  "ben@hillsbede.co.uk"
 description       "Monit configs for server components"
-version           "0.0.1"
+version           "0.0.2"
 
 recipe "monit_configs-tlq::memcached", "Monit config for memcached"
 recipe "monit_configs-tlq::mongo", "Monit config for mongodb"
