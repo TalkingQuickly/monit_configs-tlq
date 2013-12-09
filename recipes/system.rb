@@ -3,6 +3,11 @@ template "/etc/monit/conf.d/system.conf" do
   group "root"
   mode "0700"
   source "system.conf.erb"
+  notifies :run, "execute[restart-monit]", :immediately
 end
 
-execute "service monit restart"
+execute "restart-monit" do
+  command "initctl reload-configuration"
+  command "service monit restart"
+  action :nothing
+end
