@@ -8,6 +8,6 @@ end
 
 execute "restart-monit" do
   command "initctl reload-configuration"
-  command "service monit restart"
+  command "monit reload"
   action :nothing
 end
