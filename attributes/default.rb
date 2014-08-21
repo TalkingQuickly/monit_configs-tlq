@@ -1,0 +1,1 @@
+default[:monit][:postgres_version] = '9.1'
