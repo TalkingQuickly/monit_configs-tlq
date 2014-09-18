@@ -1,6 +1,6 @@
 #Monitoring Mongo Service
 
-check process mongodb with pidfile /var/lib/mongodb/mongod.lock
+check process mongodb with pidfile /var/lib/mongo/mongod.lock
   group database
   start program = "/etc/init.d/mongod start"
   stop program = "/etc/init.d/mongod stop"
