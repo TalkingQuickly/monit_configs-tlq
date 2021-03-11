@@ -1,8 +1,0 @@
-#Monitoring Mongo Service
-
-check process mongodb with pidfile <%= node['monit_configs-tlq']['mongo']['pidfile'] %>
-  group database
-  start program = "/etc/init.d/mongod start"
-  stop program = "/etc/init.d/mongod stop"
-  if failed host 127.0.0.1 port 27017 then restart
-  if 15 restarts within 15 cycles then timeout

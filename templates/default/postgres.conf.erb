@@ -1,6 +1,8 @@
 #Monitoring Postgres Service
 
 check process postgresql with pidfile <%= node['monit_configs-tlq']['postgres']['pidfile'] %>
-  start program = "/etc/init.d/postgresql start"
-  stop program = "/etc/init.d/postgresql stop"
+  start program = "/usr/bin/systemctl start postgresql"
+  stop program = "/usr/bin/systemctl stop postgresql"
   if 15 restarts within 15 cycles then timeout
+  if failed host localhost port 5432 type TCP then restart
+  if failed host localhost port 5432 type TCP then alert
